@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter.font import Font as ft
 from graph import *
+
 def dfs_by_category(graph, node, category, visited):
     visited.add(node)
     if 'categories' in graph.graph_dict[node] and graph.graph_dict[node]['categories'] == category:
@@ -8,17 +9,15 @@ def dfs_by_category(graph, node, category, visited):
 
 graph = build_graph_from_json('TF2.json')
 
-
-
-
 def buscar_recomendaciones():
-    # Obtiene la categoría de la entrada del usuario
+    # Obtiene la categoría escogida por el usuario
     categoria = titulo_libro_entry.get()
     start_nodes = [vertex for vertex, attributes in graph.graph_dict.items() if 'categories' in attributes and attributes['categories'] == categoria]
-    result_listbox.delete(0, tk.END)  # Limpiar resultados anteriores
+    result_listbox.delete(0, tk.END) # Evita que se mantenga el resultado que dio anteriormente
     visited_nodes = set()
     for start_node in start_nodes:
         dfs_by_category(graph, start_node, categoria, visited_nodes)
+
 ventana = tk.Tk()
 ventana.title("Pantalla Principal")
 ventana.geometry("600x400")  
