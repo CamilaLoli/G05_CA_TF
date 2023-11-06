@@ -25,7 +25,7 @@ ventana.iconbitmap("books.ico")
 
 titulo_font = ft(family="Verdana", size=15, weight="bold")
 
-titulo_label = tk.Label(ventana, text="Titulo de la pagina", font=titulo_font)
+titulo_label = tk.Label(ventana, text="BiblioCat", font=titulo_font)
 titulo_label.pack(pady=10)
 
 
