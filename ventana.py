@@ -10,7 +10,7 @@ def dfs_by_category(graph, node, category, visited):
         result_listbox.insert(tk.END, f"Nodo {node}: {category}")
 
 # Especifica la categoría por la que deseas buscar
-category_to_search = "History"
+
 
 # Encuentra un nodo de inicio que tenga la categoría deseada
 start_nodes = [vertex for vertex, attributes in graph.graph_dict.items() if 'categories' in attributes and attributes['categories'] == category_to_search]
