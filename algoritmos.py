@@ -16,8 +16,6 @@ def dfs_by_category(graph, node, category, visited):
 # Especifica la categoría por la que deseas buscar
 category_to_search = "History"
 
-# Verifica si los nodos tienen la categoría "History" asignada
-
 # Encuentra un nodo de inicio que tenga la categoría deseada
 start_nodes = graph.get_vertex(1027)
 
