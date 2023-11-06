@@ -13,10 +13,10 @@ def dfs_by_category(graph, node, category, visited):
                 if 'categories' in attributes and attributes['categories'] == category:
                     dfs_by_category(graph, neighbor, category, visited)
 
-# Especifica la categoría por la que deseas buscar
+# Para indicar la categoría *se prueba con history
 category_to_search = "History"
 
-# Encuentra un nodo de inicio que tenga la categoría deseada
+# Encuentra el primer nodo con la categoría indicada
 start_nodes = graph.get_vertex(1027)
 
 for start_node in graph.get_vertices():
