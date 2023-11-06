@@ -14,7 +14,7 @@ class Graph:
             if 'edges' not in self.graph_dict[vertex2]:
                 self.graph_dict[vertex2]['edges'] = {}
             self.graph_dict[vertex1]['edges'][vertex2] = weight
-            self.graph_dict[vertex2]['edges'][vertex1] = weight  # Debido a que es un grafo no dirigido
+            self.graph_dict[vertex2]['edges'][vertex1] = weight
 
     def get_vertices(self):
         return list(self.graph_dict.keys())
