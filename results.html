@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados de la búsqueda</title>
+    <link rel="icon" href="{{ url_for('static', filename='books.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <style>
+        .result-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="home-h2">Resultados de la búsqueda</h1>
+
+    {% if result %}
+        {% for item in result %}
+            <div class="result-box card">
+                <h2 class="h3">Title: {{ item.title }}</h2>
+                <p>Number of Pages: {{ item.num_pages }}</p>
+                <p>Categories: {{ item.categories }}</p>
+                <p>Average Rating: {{ item.average_rating }}</p>
+                <p>Published Year: {{ item.published_year }}</p>
+                <img src="{{ item.image }}" alt="Book Image">
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No se encontraron resultados.</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="books.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliocat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="{{ url_for('static', filename='books.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    
+</head>
+<body>
+    <header id="header">
+        <h1>Bibliocat</h1>
+    </header>
+    
+    <nav> 
+        <a class="scroll-link" href="#Home">Inicio</a>
+        <a class="scroll-link" href="#Search">Buscador</a>
+        <a class="scroll-link" href="#GroupInfo">Acerca del grupo</a>
+        <!-- <a class="scroll-link" href="#footer">Redes</a>-->
+    </nav>
+
+    <section id="Home" class="home-section">
+        <h2 class="home-h2">¿Cómo funciona?</h2>
+        <p class="p-home">
+            Esta aplicación se basa en distintos algoritmos para crear filtros especiales.
+            Se incluye búsqueda por nombre, filtro para el género y uno para el año.
+            De esta forma, el usuario tiene libertad de búsqueda.
+        </p>
+    </section>
+
+    <section id="Search">
+        <h2 class="text-search-h2">Búsqueda</h2>
+        <form action="/search" method="POST">
+            <div class="div-search ">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                <label for="category">Category:</label>
+                <input type="checkbox" id="showCategory" name="showCategory" onchange="toggleCategory()">
+                <select id="category" name="category" style="display: none;">
+                    {% for category in categories %}
+                        <option value="{{ category }}">{{ category }}</option>
+                    {% endfor %}
+                </select>
+                <label for="year">Year:</label>
+                <input type="checkbox" id="showYear" name="showYear" onchange="toggleYear()">
+                <input type="number" id="year" name="year" style="display: none;">
+                <select id="year_filter" name="year_filter" style="display: none;">
+                    <option value="mayor">Mayor</option>
+                    <option value="menor">Menor</option>
+                </select>
+                <script>
+                    function toggleCategory() {
+                        var checkbox = document.getElementById("showCategory").checked;
+                        var categorySelect = document.getElementById("category");
+                        var categoryDisplay, categoryValue;
+        
+                        if (checkbox) {
+                            categoryDisplay = "block";
+                            categoryValue = "";
+                        } else {
+                            categoryDisplay = "none";
+                            categoryValue = "none";
+                        }
+                        categorySelect.style.display = categoryDisplay;
+                        categorySelect.value = categoryValue;
+                    }
+        
+                    function toggleYear() {
+                        var checkbox = document.getElementById("showYear").checked;
+                        var yearInput = document.getElementById("year");
+                        var year_filterSelect = document.getElementById("year_filter");
+                        var yearDisplay, year_filterDisplay;
+        
+                        if (checkbox) {
+                            yearDisplay = "block";
+                            year_filterDisplay = "block";
+                        } else {
+                            yearDisplay = "none";
+                            year_filterDisplay = "none";
+                        }
+                        yearInput.style.display = yearDisplay;
+                        year_filterSelect.style.display = year_filterDisplay;
+                    }
+                </script>
+                <button type="submit" class="btn btn-des" target="_blank">Buscar</button>
+            </div>
+        </form>
+    </section>
+
+    <section id="GroupInfo">
+        <h2 class="gi-team">Acerca del equipo</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Sergio Pariona</h3>
+                <p>Actualmente cursando el cuarto ciclo de Ingeniería de Software. Mi dedicación a esta disciplina se fundamenta en la fascinación por la creación y mejora continua que la programación proporciona. Disfruto especialmente de la oportunidad de aportar creatividad a cada proyecto.</p>
+            </div>
+            <div class="card">
+                <h3>Camila Loli</h3>
+                <p>Soy estudiante de la carrera Ingeniería de Software. Mi carrera se basa en los conocimientos y técnicas científicas para crear un programa informático. Tengo experiencia con el trabajo en equipo, creación de proyectos y creación de programas básicos.</p>
+            </div>
+            <div class="card">
+                <h3>Natalia Huamanchumo</h3>
+                <p>Soy estudiante del cuarto ciclo de la carrera de Ciencias de la Computación en la Universidad Peruana de Ciencias Apliciadas. 
+                    Me interesa la tecnología y me gustaría aprender sobre la inteligencia artificial y dedicarme a ello.</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>Trabajo Final del curso Complejidad Algorítmica. Ciclo 2023-02. Grupo 05.</p>
+    </footer>
+</body> 
+</html>
+

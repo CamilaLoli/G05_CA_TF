@@ -1,0 +1,139 @@
+body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ecddae;
+}
+
+header {
+    background-color: #5e4447;
+    color: #ecddae;
+    padding: 30px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    
+}
+
+h1 {font-size: 60px;}
+
+h2 {
+    color: #212121;
+    justify-content: center;
+    text-align: center;
+}
+
+.p-home {
+    margin-top: 10px;
+    color: #fff;
+    text-align: justify;
+    font-family: 'Playfair Display', serif;   
+    font-size: 1.35714286em;
+    line-height: 1.68421053em;
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ab7878;
+    padding: 10px;
+}
+
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 50px;
+    margin: 50px 0;
+    border-bottom: 5px solid #d4c69c;
+    
+}
+
+.home-section {
+    margin-top: 0;
+    position: relative;
+    height: 100vh;
+    background-image: url('../pngtree-an-old-library-or-book-room-with-some-books-and-plants-image_2521166.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.home-h2 {
+    color: #fff;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0px !important;
+    font-size: 90px;
+    font-weight: 700;
+    margin-left: 50px;
+}
+
+.btn-des {
+    margin-left: 10px;
+    background-color: #55656b;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f4e6;
+    padding: 10px;
+    height: 300px;
+    width: 250px;
+    margin: 10px;
+    text-align: center;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    line-height: 1.4;
+}
+
+.text-search-h2 {
+    margin-bottom: 30px;
+}
+
+.label-search {
+    margin-left: 10px;
+}
+
+.div-search {
+    text-align: center;
+    justify-content: center;
+    margin-right: 30px;
+}
+
+.gi-team {
+    margin-bottom: 30px;
+}
+
+footer {
+    background-color: #5e4447;
+    color: #ecddae;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

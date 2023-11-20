@@ -14,7 +14,7 @@ class Graph:
             if 'edges' not in self.graph_dict[vertex2]:
                 self.graph_dict[vertex2]['edges'] = {}
             self.graph_dict[vertex1]['edges'][vertex2] = weight
-            self.graph_dict[vertex2]['edges'][vertex1] = weight
+            self.graph_dict[vertex2]['edges'][vertex1] = weight  # Debido a que es un grafo no dirigido
 
     def get_vertices(self):
         return list(self.graph_dict.keys())
@@ -52,5 +52,10 @@ def build_graph_from_json(json_file):
     return graph
 
 
+
+
+
+
+# Imprime las relaciones entre nodos
 
 
